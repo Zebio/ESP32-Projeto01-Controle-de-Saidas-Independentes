@@ -11,8 +11,10 @@ tempo o processador ocupa realizando cada task.
 
 Em Sistemas Operacionais como Windows e Linux, são usadas Threads para dividir o tempo de execução
 do processador entre várias tasks, em microcontroladores potentes como o esp32 podemos usar o FREERTOS
-para separar várias tasks para execução do processador e usa funções como a função millis para fazer
-isso em baix-nível.
+para separar várias tasks para execução do processador que funções como a função millis para fazer
+isso em baixo-nível.
 
 Nesse simples programa, como queremos somente piscar três LEDs não precisamos de usar o FREERTOS,
-vamos somente usar a função millis() manualmente.
+vamos somente usar a função millis() manualmente. Basicamente temos três tasks a serem feitas, e 
+cada uma é disparada no exato momento no tempo, assim não ocupando o processador o tempo todo de 
+modo que cada task pode ser feita paralelamente.
