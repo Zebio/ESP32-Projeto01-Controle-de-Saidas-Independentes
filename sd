@@ -1,0 +1,55 @@
+[1mdiff --git a/projeto PlatformIO/src/main.cpp b/projeto PlatformIO/src/main.cpp[m
+[1mindex 58b344c..b1e9630 100644[m
+[1m--- a/projeto PlatformIO/src/main.cpp[m	
+[1m+++ b/projeto PlatformIO/src/main.cpp[m	
+[36m@@ -1,9 +1,47 @@[m
+ #include <Arduino.h>[m
+ [m
+[32m+[m[32m/*-----------Constantes----------------------*/[m
+[32m+[m[32mconst int tempo_do_led1_ms=250,[m
+[32m+[m[32m          tempo_do_led2_ms=500,[m
+[32m+[m[32m          tempo_do_led3_ms=1000;[m
+[32m+[m
+[32m+[m[32m/*-------------Mapeamento de Hardware--------*/[m
+[32m+[m[32m#define led1 5[m
+[32m+[m[32m#define led2 21[m
+[32m+[m[32m#define led3 22[m
+[32m+[m
+[32m+[m[32m/*-------------Variávei Globais-------------*/[m
+[32m+[m[32mint tempo_atual_led1=0,[m
+[32m+[m[32m    tempo_atual_led2=0,[m
+[32m+[m[32m    tempo_atual_led3=0;[m
+[32m+[m
+[32m+[m[32m/*------------Configurações iniciais--------*/[m
+ void setup() {[m
+[31m-  // put your setup code here, to run once:[m
+[32m+[m[32m  pinMode(led1,OUTPUT);[m
+[32m+[m[32m  pinMode(led2,OUTPUT);[m
+[32m+[m[32m  pinMode(led3,OUTPUT);[m
+[32m+[m
+[32m+[m[32m  digitalWrite(led1,LOW);[m
+[32m+[m[32m  digitalWrite(led2,LOW);[m
+[32m+[m[32m  digitalWrite(led3,LOW);[m
+ }[m
+ [m
+[32m+[m
+[32m+[m[32m/*--------------Loop Infinito--------------*/[m
+ void loop() {[m
+[31m-  // put your main code here, to run repeatedly:[m
+[32m+[m[32m  if ((millis()-tempo_atual_led1)>=tempo_do_led1_ms)[m
+[32m+[m[32m  {[m
+[32m+[m[32m  digitalWrite(led1,!digitalRead(led1));[m
+[32m+[m[32m  tempo_atual_led1=millis();[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if ((millis()-tempo_atual_led2)>=tempo_do_led2_ms)[m
+[32m+[m[32m  {[m
+[32m+[m[32m  digitalWrite(led2,!digitalRead(led2));[m
+[32m+[m[32m  tempo_atual_led2=millis();[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if ((millis()-tempo_atual_led3)>=tempo_do_led3_ms)[m
+[32m+[m[32m  {[m
+[32m+[m[32m  digitalWrite(led3,!digitalRead(led3));[m
+[32m+[m[32m  tempo_atual_led3=millis();[m
+[32m+[m[32m  }[m
+ }[m
+\ No newline at end of file[m
