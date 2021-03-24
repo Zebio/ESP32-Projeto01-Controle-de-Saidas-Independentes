@@ -1,9 +1,9 @@
 #include <Arduino.h>
 
 /*-----------Constantes----------------------*/
-const int tempo_do_led1_ms=250,
-          tempo_do_led2_ms=500,
-          tempo_do_led3_ms=1000;
+const int tempo_do_led1_ms=389, //tempo para piscar o led1
+          tempo_do_led2_ms=488, //tempo para piscar o led2
+          tempo_do_led3_ms=246; //tempo para piscar o led3
 
 /*-------------Mapeamento de Hardware--------*/
 #define led1 15
