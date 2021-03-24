@@ -6,9 +6,9 @@ const int tempo_do_led1_ms=250,
           tempo_do_led3_ms=1000;
 
 /*-------------Mapeamento de Hardware--------*/
-#define led1 5
-#define led2 21
-#define led3 22
+#define led1 15
+#define led2 4
+#define led3 5
 
 /*-------------Variávei Globais-------------*/
 int tempo_atual_led1=0,
