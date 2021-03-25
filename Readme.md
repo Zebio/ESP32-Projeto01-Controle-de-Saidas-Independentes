@@ -1,4 +1,6 @@
-Um dos meus primeiros projetos com o ESP32, usa o código Arduíno no VS Code com a extensão PlatformIO
+Um dos meus primeiros projetos com o ESP32, usa o código Arduíno no VS Code com a extensão PlatformIO,
+um projeto simples mas que usa um conceito bastante interessante que será útil em projetos futuros que
+usarão várias threads
 
 Sempre que usamos uma função delay em qualquer microcontrolador, basicamente estamos colocando instruções
 nop no processador, fazendo com que o processador "processe" essas instruções nop por determinado tempo
