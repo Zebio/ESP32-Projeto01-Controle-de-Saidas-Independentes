@@ -18,3 +18,5 @@ Nesse simples programa, como queremos somente piscar três LEDs não precisamos 
 vamos somente usar a função millis() manualmente. Basicamente temos três tasks a serem feitas, e 
 cada uma é disparada no exato momento no tempo, assim não ocupando o processador o tempo todo de 
 modo que cada task pode ser feita paralelamente.
+
+![](imagens/hardware.png)
