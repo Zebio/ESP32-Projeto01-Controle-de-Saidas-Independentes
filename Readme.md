@@ -1,24 +1,18 @@
-Um dos meus primeiros projetos com o ESP32, usa o código Arduíno no VS Code com a extensão PlatformIO,
-um projeto simples mas que usa um conceito bastante interessante que será útil em projetos futuros que
-usarão várias threads
+# Controle de Saídas Independentes com ESP32
 
-Sempre que usamos uma função delay em qualquer microcontrolador, basicamente estamos colocando instruções
-nop no processador, fazendo com que o processador "processe" essas instruções nop por determinado tempo
-até atingirmos o tempo de delay. O ruim disso é que o processador fica ocupado realizando essas instruções
-e não pode seguir na execução do código. 
+### Resumo
 
-Podemos "repartir" o tempo em que o processador está ocupado em cada tarefa usando a função millis()
-uma função que mede o tempo de execução do processador em milisegundos, assim podemos separar quanto
-tempo o processador ocupa realizando cada task.
+Nesse Projeto temos três saídas digitais completamente independentes uma da outra. Cada uma das saídas têm seu estado alternado num intervalo de tempo fixo e único. Como queremos que cada saída seja completamente independente não podemos usar "delays" no código, já que eles vão "prender" o processador por determinado intervalo de tempo e afetar as outras saídas.
 
-Em Sistemas Operacionais como Windows e Linux, são usadas Threads para dividir o tempo de execução
-do processador entre várias tasks, em microcontroladores potentes como o esp32 podemos usar o FREERTOS
-para separar várias tasks para execução do processador que funções como a função millis para fazer
-isso em baixo-nível.
+Para resolver esse problema usamos a função "millis", onde o controle de cada uma das saídas será feito baseado no tempo atual do processador, isso nos permite verificar o tempo do processador e só alterar a saída caso atingirmos o intervalo de tempo fixo daquela saída e sem afetar as outras saídas.
 
-Nesse simples programa, como queremos somente piscar três LEDs não precisamos de usar o FREERTOS,
-vamos somente usar a função millis() manualmente. Basicamente temos três tasks a serem feitas, e 
-cada uma é disparada no exato momento no tempo, assim não ocupando o processador o tempo todo de 
-modo que cada task pode ser feita paralelamente.
+### Como Usar
+
+Para clonar projetos do PlatformIO como esse, siga o guia passo-a-passo disponível no repositório: [Instrucoes-PlatformIO](https://github.com/Zebio/Instrucoes-PlatformIO)
+
+
+### Esquemático do Hardware 
+
+Estamos usando 3 LEDs para representar as 3 saídas como podemos ver no esquemático do circuito na figura.
 
 ![](imagens/hardware.png)
